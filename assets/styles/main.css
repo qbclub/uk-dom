@@ -5,3 +5,17 @@ body{
 p, .text{
 color: #0A0F24;
 }
+
+a {
+    text-decoration: none;
+    color: inherit;
+    
+    &:hover {
+      text-decoration: none;
+      color: inherit;
+    }
+    
+    &:visited {
+      color: inherit;
+    }
+  }

@@ -1,5 +1,8 @@
 <script lang="ts" setup>
-import TopMenu from '~/components/TopMenu.vue';
+import BottomMenu from '~/components/BottomMenu.vue';
+import MobileMenu from '~/components/MobileMenu.vue';
+let drawer = ref(null)
+
 
 
 </script>
@@ -7,7 +10,7 @@ import TopMenu from '~/components/TopMenu.vue';
 <template>
   <v-app style="position: relative;">
 
-    <v-container style="position: fixed; top: 0; left: 0; right: 0; background: white; z-index: 1;">
+    <v-container class="header-container">
       <v-row>
         <v-col class="d-flex align-center justify-space-between pt-0 pb-0">
           <div>
@@ -16,15 +19,29 @@ import TopMenu from '~/components/TopMenu.vue';
           <div class="text font-weight-bold">
             тел. 8 (34141)50762
           </div>
-          <v-icon icon="mdi-menu"></v-icon>
+          <div></div>
+
 
         </v-col>
       </v-row>
-      <TopMenu />
+
     </v-container>
+    <v-container class="top-menu-wrapper  ">
+      <v-row class="top-menu">
+        <v-col>
+          <TopMenu class="d-none d-md-block" />
+          <div class="d-flex justify-end d-md-none">
+            <v-icon icon="mdi-menu" @click.stop="drawer = !drawer"></v-icon>
+          </div>
 
+        </v-col>
+      </v-row>
+    </v-container>
+    <v-navigation-drawer :width="250" v-model="drawer" temporary>
+      <MobileMenu />
+    </v-navigation-drawer>
 
-    <v-main style="margin-top:180px">
+    <v-main>
       <v-container>
         <v-row>
           <v-col>
@@ -36,11 +53,7 @@ import TopMenu from '~/components/TopMenu.vue';
     <v-footer color="primary" style="max-height: 120px;">
       <v-row justify="center" no-gutters>
         <div>
-          <div>
-            <v-btn v-for="link in 5" class="mx-2" color="white" rounded="xl" variant="text">
-              {{ link }}
-            </v-btn>
-          </div>
+          <BottomMenu />
 
           <div class="text-center">
             <a href="https://qbit-club.com" target="_blank" style="user-select: none;">
@@ -60,4 +73,20 @@ import TopMenu from '~/components/TopMenu.vue';
 
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="css" scoped>
+.top-menu-wrapper {
+  position: sticky;
+  top: 0;
+  z-index: 99;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+
+}
+
+.top-menu {
+  position: sticky;
+  top: 0;
+  z-index: 99;
+}
+</style>
