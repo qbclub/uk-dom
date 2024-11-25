@@ -1,9 +1,15 @@
 <script lang="ts" setup>
-import BottomMenu from '~/components/BottomMenu.vue';
-import MobileMenu from '~/components/MobileMenu.vue';
+import { useRouter } from 'vue-router'
+import { useAppStore } from '~/stores/appState'
+
+const router = useRouter()
+const appState = useAppStore()
 let drawer = ref(null)
 
-
+let routeTo = () => {
+   router.push('/')
+   appState.activeMenu = 0
+}
 
 </script>
 
@@ -13,11 +19,13 @@ let drawer = ref(null)
     <v-container class="header-container">
       <v-row>
         <v-col class="d-flex align-center justify-space-between pt-0 pb-0">
-          <div>
-            <img style="width:200px" src="../assets/images/dom.svg" alt="">
-          </div>
-          <div class="text font-weight-bold">
-            тел. 8 (34141)50762
+       
+            <div @click="routeTo()" style="cursor: pointer;">
+              <img style="width:200px" src="../assets/images/dom.svg" alt="">
+            </div>
+      
+          <div class="text font-weight-bold d-none d-md-block">
+            тел. 8 34141 50762
           </div>
           <div></div>
 
@@ -26,17 +34,25 @@ let drawer = ref(null)
       </v-row>
 
     </v-container>
+
     <v-container class="top-menu-wrapper  ">
       <v-row class="top-menu">
         <v-col>
           <TopMenu class="d-none d-md-block" />
-          <div class="d-flex justify-end d-md-none">
+          <div class="d-flex justify-space-between d-md-none">
+            <div>
+
+            </div>
+            <div class="text font-weight-bold">
+              тел. 8 34141 50762
+            </div>
             <v-icon icon="mdi-menu" @click.stop="drawer = !drawer"></v-icon>
           </div>
 
         </v-col>
       </v-row>
     </v-container>
+
     <v-navigation-drawer :width="250" v-model="drawer" temporary>
       <MobileMenu />
     </v-navigation-drawer>

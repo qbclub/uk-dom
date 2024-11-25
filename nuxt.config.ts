@@ -19,6 +19,9 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
    
   ],
+  plugins: [
+    { src: '~/plugins/vue-pdf-embed.js', mode: 'client' }
+  ],
   googleFonts: {
     families: {
       'Roboto': true,

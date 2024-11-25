@@ -26,7 +26,7 @@ let menu = reactive(
     ]
 )
 
-let activeMenu = ref(0)
+let activeMenu = ref(appState.activeMenu)
 
 watch(() => appState.activeSubMenuRoute, (newMenu, oldMenu) => {
     activeMenu.value = appState.activeMenu
