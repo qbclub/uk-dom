@@ -1,30 +1,61 @@
 <script setup>
 
-const pdfSrc = ref('/documents/1.pdf');
-const pdfViewer = ref(null);
+import PdfView from '~/components/PdfView.vue';
 
-function printPdf() {
-  if (pdfViewer.value) {
-    pdfViewer.value.print();
-  }
+
+let docs = ref([
+    {
+        title: "Договор с Рир",
+        link: '/documents/1.pdf'
+
+    },
+    {
+        title: "Договор с Электросетями",
+        link: '/documents/2.pdf'
+
+    },
+    {
+        title: "Договор с водоканалом",
+        link: '/documents/2.pdf'
+    },
+
+])
+let doc = ref(null)
+let dialog = ref(false)
+
+let openDialog = (item) => {
+
+    doc.value = item
+    dialog.value = true
+
 }
-const downloadPdf = () => {
-  const link = document.createElement('a');
-  link.href = pdfSrc.value;
-  link.download = 'document.pdf'; // You can set any filename here
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
-};
+
+
 </script>
 <template>
-      <ClientOnly>
-    Документы
-    <div class="d-flex justify-center">
-        <v-btn @click="downloadPdf" class="ma-4">Скачать</v-btn>
-        <v-btn @click="printPdf"  class="ma-4">Печать</v-btn>
-    </div>
-   
-        <PdfEmbed ref="pdfViewer" style="max-width: 100%;" :source="pdfSrc" />
-    </ClientOnly>
+    <v-list>
+
+        <v-list-item v-for="(item, i) in docs" :key="i" :value="item" color="primary" @click="openDialog(item)">
+            <v-list-item-title>
+                {{ `${i + 1}. ${item.title}` }}.
+            </v-list-item-title>
+        </v-list-item>
+    </v-list>
+
+    <v-dialog v-model="dialog" width="100%">
+        <v-card >
+            <div class="ma-4 d-flex justify-space-between" >
+                <h3>
+                    {{ doc.title }}
+                </h3>
+                <v-btn density="compact"  color="accent"  icon="mdi-close" variant="text" @click="dialog = false"></v-btn>
+
+            </div>
+            
+            <PdfView :link = 'doc.link' :title="doc.title"/>
+
+        </v-card>
+    </v-dialog>
+
+
 </template>
