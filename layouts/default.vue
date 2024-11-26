@@ -21,7 +21,7 @@ let routeTo = () => {
         <v-col class="d-flex align-center justify-space-between pt-0 pb-0">
        
             <div @click="routeTo()" style="cursor: pointer;">
-              <img style="width:200px" src="../assets/images/dom.svg" alt="">
+              <img style="width:200px" src="../assets/images/dom.png" alt="">
             </div>
       
           <div class="text font-weight-bold d-none d-md-block">
