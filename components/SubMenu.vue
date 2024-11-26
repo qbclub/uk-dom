@@ -13,9 +13,15 @@ let menu = reactive(
             route: '/info/houses',
         },
         {
+            name: 'Документы',
+            route: '/info/documents',
+        }, 
+        {
             name: 'Договоры',
             route: '/info/contracts',
-        }, {
+        }, 
+     
+        {
             name: 'Отчеты',
             route: '/info/reports',
         },
@@ -37,11 +43,11 @@ let menu = reactive(
 )
 
 
-let activeMenu = computed(()=>{
+let activeMenu = computed(() => {
     return menu.findIndex(item => item.route == appState.activeSubMenuRoute);
 })
 
-let routeTo = (route)=>{
+let routeTo = (route) => {
     appState.activeMenu = 3 //это меню информация
     router.push(route)
     appState.activeSubMenuRoute = route
@@ -49,14 +55,14 @@ let routeTo = (route)=>{
 
 </script>
 <template>
-{{ appState.activeSubMenu }}
+    {{ appState.activeSubMenu }}
     <v-row>
         <v-col class="d-flex justify-center flex-wrap">
 
             <v-btn-toggle color="primary" v-model="activeMenu" group>
-            <v-btn  v-for="item in menu"  size="small" :ripple="false" @click = routeTo(item.route)>
-                {{ item.name }}
-            </v-btn>
+                <v-btn v-for="item in menu" size="small" :ripple="false" @click=routeTo(item.route)>
+                    {{ item.name }}
+                </v-btn>
             </v-btn-toggle>
 
         </v-col>

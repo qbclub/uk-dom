@@ -4,20 +4,20 @@ import PdfView from '~/components/PdfView.vue';
 
 
 let docs = ref([
-    // {
-    //     title: "Договор с Рир",
-    //     link: '/documents/1.pdf'
+    {
+        title: "Постановка на учет в налоговой",
+        link: '/documents/PosatnovkaNaUchet.pdf'
 
-    // },
-    // {
-    //     title: "Договор с Электросетями",
-    //     link: '/documents/2.pdf'
+    },
+    {
+        title: "Выписка из ЕГРЮЛ",
+        link: '/documents/EGRUL.pdf'
 
-    // },
-    // {
-    //     title: "Договор с водоканалом",
-    //     link: '/documents/2.pdf'
-    // },
+    },
+    {
+        title: "Устав",
+        link: '/documents/Ustav.pdf'
+    },
 
 ])
 let doc = ref(null)

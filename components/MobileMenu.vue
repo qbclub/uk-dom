@@ -17,6 +17,10 @@
         <NuxtLink to="/info/houses">
             <v-list-item link title="Дома"></v-list-item>
         </NuxtLink>
+        <NuxtLink to="/info/documents">
+            <v-list-item link title="Документы"></v-list-item>
+        </NuxtLink>
+        
         <NuxtLink to="/info/contracts">
             <v-list-item link title="Договоры"></v-list-item>
         </NuxtLink>

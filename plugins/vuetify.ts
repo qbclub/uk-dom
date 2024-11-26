@@ -15,7 +15,7 @@ export default defineNuxtPlugin((app) => {
         light: {
           colors: {
             primary: '#0F609A',
-            accent: '#FC7F09',
+            accent: '#ff6363ff',
             secondary:"#0A0F24"
           },
         },
