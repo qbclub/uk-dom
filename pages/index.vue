@@ -62,10 +62,10 @@ import Requisites from './Info/Requisites.vue';
             </v-card-item>
             <div class="pa-4">
                <p>Электричество</p>
-              <div><a href="https://udm.esplus.ru/"><img style="width:100px" src="~/assets/images/Energo.png" alt=""></a>
+              <div><a href="https://udm.esplus.ru/" target="_blank"><img style="width:100px" src="~/assets/images/Energo.png" alt=""></a>
                <b class="ml-4">c 15 по 25 число</b></div> 
                <p>Вода, тепло</p>
-               <a href="https://www.rusatom-utilities.ru/consumers/glazov/submit-meter-readings/"><img style="width:100px" src="~/assets/images/rir.svg" alt=""></a>
+               <a href="https://www.rusatom-utilities.ru/consumers/glazov/submit-meter-readings/" target="_blank"><img style="width:100px" src="~/assets/images/rir.svg" alt=""></a>
                <b class="ml-4">c 20 по 25 число</b>
             </div>
 

@@ -48,7 +48,7 @@ let openDialog = (item) => {
                 <h3>
                     {{ doc.title }}
                 </h3>
-                <v-btn density="compact"  color="accent"  icon="mdi-close" variant="text" @click="dialog = false"></v-btn>
+                <v-btn density="compact"  color="accent"   icon="mdi-close" variant="text" @click="dialog = false" style="position: fixed; top: 10px; right: 10px; z-index: 1;"></v-btn>
 
             </div>
             
