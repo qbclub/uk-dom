@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import Contacts from './Info/Contacts.vue';
-import Requisites from './Info/Requisites.vue';
+import Contacts from '../components/Contacts.vue';
+import Requisites from '../components/Requisites.vue';
 
 </script>
 

@@ -31,10 +31,10 @@
             <v-list-item link title="Расчеты"></v-list-item>
         </NuxtLink> -->
         <v-divider class="w-100"></v-divider>
-        <NuxtLink to="/info/requisites">
+        <NuxtLink to="/info/requisitespage">
             <v-list-item link title="Реквизиты"></v-list-item>
         </NuxtLink>
-        <NuxtLink to="/info/contacts">
+        <NuxtLink to="/info/contactspage">
             <v-list-item link title="Контакты"></v-list-item>
         </NuxtLink>
 

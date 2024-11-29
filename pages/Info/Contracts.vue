@@ -33,6 +33,7 @@ let openDialog = (item) => {
 
 </script>
 <template>
+   
     <v-list>
 
         <v-list-item v-for="(item, i) in docs" :key="i" :value="item" color="primary" @click="openDialog(item)">
@@ -43,16 +44,16 @@ let openDialog = (item) => {
     </v-list>
 
     <v-dialog v-model="dialog" width="100%">
-        <v-card >
-            <div class="ma-4 d-flex justify-space-between" >
+        <v-card>
+            <div class="ma-4 d-flex justify-space-between">
                 <h3>
                     {{ doc.title }}
                 </h3>
-                <v-btn density="compact"  color="accent"  icon="mdi-close" variant="text" @click="dialog = false"></v-btn>
+                <v-btn density="compact" color="accent" icon="mdi-close" variant="text" @click="dialog = false"></v-btn>
 
             </div>
-            
-            <PdfView :link = 'doc.link' :title="doc.title"/>
+
+            <PdfView :link='doc.link' :title="doc.title" />
 
         </v-card>
     </v-dialog>

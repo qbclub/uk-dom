@@ -9,11 +9,11 @@ let menu = reactive(
     [
         {
             name: 'Реквизиты',
-            route: '/info/requisites',
+            route: '/info/requisitespage',
         },
         {
             name: 'Контакты',
-            route: '/info/contacts',
+            route: '/info/contactspage',
         },
     ]
 )
