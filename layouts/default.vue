@@ -6,9 +6,10 @@ const router = useRouter()
 const appState = useAppStore()
 let drawer = ref(null)
 
-let routeTo = () => {
+let routeTo = () => { 
    router.push('/')
    appState.activeMenu = 0
+   appState.activeMenuRoute = '/'
 }
 
 </script>

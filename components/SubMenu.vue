@@ -6,29 +6,28 @@ const appState = useAppStore()
 const router = useRouter()
 let menu = reactive(
 
-
     [
-        {
-            name: 'Дома ',
-            route: '/info/houses',
-        },
+        // {
+        //     name: 'Дома ',
+        //     route: '/info/houses',
+        // },
         {
             name: 'Документы',
             route: '/info/documents',
-        }, 
-        {
-            name: 'Договоры',
-            route: '/info/contracts',
-        }, 
-     
-        {
-            name: 'Отчеты',
-            route: '/info/reports',
         },
-        {
-            name: 'Расчеты',
-            route: '/info/calculations',
-        },
+        // {
+        //     name: 'Договоры',
+        //     route: '/info/contracts',
+        // }, 
+
+        // {
+        //     name: 'Отчеты',
+        //     route: '/info/reports',
+        // },
+        // {
+        //     name: 'Расчеты',
+        //     route: '/info/calculations',
+        // },
         {
             name: 'Реквизиты',
             route: '/info/requisites',
@@ -43,23 +42,26 @@ let menu = reactive(
 )
 
 
-let activeMenu = computed(() => {
-    return menu.findIndex(item => item.route == appState.activeSubMenuRoute);
+let activeSubMenu = ref(menu.findIndex(item => item.route == appState.activeSubMenuRoute))
+
+watch(appState, ()=>{
+    activeSubMenu.value =  menu.findIndex(item => item.route == appState.activeSubMenuRoute)
 })
 
+
+
 let routeTo = (route) => {
-    appState.activeMenu = 3 //это меню информация
-    router.push(route)
     appState.activeSubMenuRoute = route
+    router.push(route)
+   
 }
 
 </script>
 <template>
-    {{ appState.activeSubMenu }}
     <v-row>
         <v-col class="d-flex justify-center flex-wrap">
 
-            <v-btn-toggle color="primary" v-model="activeMenu" group>
+            <v-btn-toggle color="primary" v-model="activeSubMenu" group>
                 <v-btn v-for="item in menu" size="small" :ripple="false" @click=routeTo(item.route)>
                     {{ item.name }}
                 </v-btn>
