@@ -62,12 +62,30 @@ import Requisites from '../components/Requisites.vue';
             </v-card-item>
             <div class="pa-4">
                <p>Электричество</p>
-              <div><a href="https://udm.esplus.ru/" target="_blank"><img style="width:100px" src="~/assets/images/Energo.png" alt=""></a>
-               <b class="ml-4">c 15 по 25 число</b></div> 
+               <div><a href="https://udm.esplus.ru/" target="_blank"><img style="width:100px"
+                        src="~/assets/images/Energo.png" alt=""></a>
+                  <b class="ml-4">c 15 по 25 число</b>
+               </div>
                <p>Вода, тепло</p>
-               <a href="https://www.rusatom-utilities.ru/consumers/glazov/submit-meter-readings/" target="_blank"><img style="width:100px" src="~/assets/images/rir.svg" alt=""></a>
+               <a href="https://www.rusatom-utilities.ru/consumers/glazov/submit-meter-readings/" target="_blank"><img
+                     style="width:100px" src="~/assets/images/rir.svg" alt=""></a>
                <b class="ml-4">c 20 по 25 число</b>
             </div>
+
+         </v-card>
+      </v-col>
+      <v-col cols="12" sm="6" md="4">
+         <v-card class="mx-auto h-100 " hover>
+            <v-card-item>
+               <v-card-title class="text-end">
+                  Объявления
+               </v-card-title>
+               <v-divider color="accent" thickness="3" class="border-opacity-100"></v-divider>
+            </v-card-item>
+            <div class="h-100 bg-image">
+
+            </div>
+
 
          </v-card>
       </v-col>
@@ -75,4 +93,15 @@ import Requisites from '../components/Requisites.vue';
    </v-row>
 
 </template>
-<style scoped></style>
+<style scoped>
+.bg-image {
+   min-height: 200px;
+   background-image: url('../assets/images/bg.png');
+   /* путь к вашей картинке */
+   background-repeat: no-repeat;
+   /* чтобы не повторялось */
+   background-position: right 10px bottom 60px;
+
+   background-size:  100px;
+}
+</style>

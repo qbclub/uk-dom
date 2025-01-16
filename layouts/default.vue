@@ -15,7 +15,7 @@ let routeTo = () => {
 </script>
 
 <template>
-  <v-app style="position: relative;">
+  <v-app style="position: relative; ">
 
     <v-container class="header-container top-menu-wrapper ">
       <v-row>
@@ -26,7 +26,7 @@ let routeTo = () => {
           </div>
 
           <div class="text font-weight-bold d-none d-md-block">
-            тел. 8 34141 50762
+           <a href="tel:89501636022">тел. 89501636022</a>  
           </div>
           <div></div>
 
@@ -48,7 +48,7 @@ let routeTo = () => {
       <MobileMenu />
     </v-navigation-drawer>
 
-    <v-main>
+    <v-main class="bg-image">
       <v-container>
         <v-row>
           <v-col>
@@ -96,4 +96,6 @@ let routeTo = () => {
   z-index: 99;
   background-color: white;
 }
+
+
 </style>
