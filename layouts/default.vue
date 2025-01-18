@@ -16,6 +16,10 @@ let routeTo = () => {
 
 <template>
   <v-app style="position: relative; ">
+    <div class="d-none d-md-block" style="position: absolute; top: 0;right: 0; z-index: 999;">
+      <img src="../assets/images/lamp.png" alt="">
+    </div>
+
 
     <v-container class="header-container top-menu-wrapper ">
       <v-row>
@@ -26,7 +30,7 @@ let routeTo = () => {
           </div>
 
           <div class="text font-weight-bold d-none d-md-block">
-           <a href="tel:89501636022">тел. 89501636022</a>  
+            <a href="tel:89501636022">тел. 89501636022</a>
           </div>
           <div></div>
 
@@ -42,7 +46,7 @@ let routeTo = () => {
       </v-row>
     </v-container>
 
-  
+
 
     <v-navigation-drawer :width="250" v-model="drawer" temporary>
       <MobileMenu />
@@ -96,6 +100,4 @@ let routeTo = () => {
   z-index: 99;
   background-color: white;
 }
-
-
 </style>
