@@ -10,6 +10,7 @@ useSeoMeta({
 </script>
 
 <template>
+  <NuxtPwaManifest />
   <NuxtLayout>
     <v-app>
       <v-container>
@@ -23,4 +24,3 @@ useSeoMeta({
     </v-app>
   </NuxtLayout>
 </template>
-

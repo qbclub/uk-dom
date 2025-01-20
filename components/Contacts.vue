@@ -4,8 +4,8 @@
       <!-- <p> Бухгалтерия: <span class="font-weight-bold">т. *** *** *****</span>
 
       </p> -->
-      <p> Диспетчерская: <span class="font-weight-bold"> т. 89501636022</span></p>
-      <p> Почта: <span class="font-weight-bold"> ukdom18@mail.ru</span></p>
+      <p> Диспетчерская: <a href="tel:+89501636022"><span class="font-weight-bold"> т. 89501636022</span></a> </p>
+      <p> Почта: <a href="mailto:ukdom18@mail.ru"><span class="font-weight-bold"> ukdom18@mail.ru</span></a> </p>
 
       <div style="cursor: pointer;">
          <img style="width:30px" src="~/assets/images/vk.svg" alt="">
