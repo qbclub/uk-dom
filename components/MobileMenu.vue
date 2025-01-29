@@ -7,12 +7,10 @@
         <NuxtLink to="/">
             <v-list-item link title="Главная"></v-list-item>
         </NuxtLink>
-        <!-- <NuxtLink to="/about">
-            <v-list-item link title="О нас"></v-list-item>
+        <NuxtLink to="/houses">
+            <v-list-item link title="Дома"></v-list-item>
         </NuxtLink>
-        <NuxtLink to="/services">
-            <v-list-item link title="Услуги"></v-list-item>
-        </NuxtLink> -->
+    
         <v-divider class="w-100"></v-divider>
         <!-- <NuxtLink to="/info/houses">
             <v-list-item link title="Дома"></v-list-item>
