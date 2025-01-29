@@ -13,6 +13,10 @@ export default     [{
 {
     name: 'Информация',
     route: "/info",
+},
+{
+    name: 'Дома',
+    route: "/houses",
 }
 
 ]
