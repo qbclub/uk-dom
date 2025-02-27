@@ -1,10 +1,9 @@
 <script lang="ts" setup>
-import { useRouter } from 'vue-router'
 import { useAppStore } from '~/stores/appState'
 
 const router = useRouter()
 const appState = useAppStore()
-let drawer = ref(null)
+let drawer = ref(false)
 
 let routeTo = () => {
   router.push('/')
